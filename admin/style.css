@@ -1,0 +1,82 @@
+body {
+    margin: 0;
+    margin-left: 100px;
+}
+
+.marque {
+    border: 1px solid black;
+    width: 80%;
+    padding: 2%;
+    position: relative;
+}
+
+main {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 10%;
+    margin-top: 5%;
+}
+
+#menu {
+    width: 25vw;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: darkgrey;
+    margin-top: 0;
+    padding-top: 9%;
+}
+
+#erreur {
+    color: red;
+}
+
+.bouton {
+    font-size: 20px;
+    text-decoration: none;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.bouton:hover a {
+    color: red;
+    transition-duration: 500ms;
+}
+
+#product {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+#product input {
+    margin: 2%;
+}
+
+#product select {
+    margin: 2%;
+}
+
+.change {
+    display: none;
+}
+
+.imgprod {
+    height: 97%;
+    position: absolute;
+    right: 1%;
+    top: 1%;
+}
