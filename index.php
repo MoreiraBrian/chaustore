@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 require_once "admin/connect.php";
 $product_req = "SELECT product.id,product.name,brand.name,category.name, price,gender,product.image from brand, category join product where brand_id = brand.id and category_id = category.id ORDER BY id DESC";
 $product_send = mysqli_query($link,$product_req);
@@ -21,12 +21,12 @@ if($product_req === false){
 <body>
 <header>
         <h1>Bienvenue sur Chaustore la boutique de chausure pour tous les goûts.</h1>
-        <?php if(!isset($_SESSION)){ ?>
-            <a href="" title="Connexion"><div>Me connecter</div></a>
+        <?php if(empty($_SESSION['id'])){ ?>
+            <a href="connexion.php" title="Connexion"><div>Me connecter</div></a>
             <a href="inscription.php" title="Inscription"><div>Creer un compte</div></a>
         <?php }else{ ?>
-            <a href="" title="Mon compte"><div>Mon compte</div></a>
-            <a href="" title="déconnection"><div>Me deconnecter</div></a>
+            <a href="compte.php" title="Mon compte"><div>Mon compte</div></a>
+            <a href="deconnect.php" title="déconnexion"><div>Me deconnecter</div></a>
         <?php } ?>
 </header> 
  <main>

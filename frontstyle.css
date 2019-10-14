@@ -58,3 +58,27 @@ h2 {
     background-color: lightgray;
     transition-duration: 200ms;
 }
+
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    font-size: 1em;
+    line-height: 189%;
+}
+
+input {
+    width: 70%;
+    font-size: 1em;
+    margin: 1%;
+}
+
+#inscrit {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#error {
+    color: red;
+}
