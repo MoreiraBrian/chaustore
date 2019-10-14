@@ -3,9 +3,6 @@ require_once 'admin/connect.php';
 if(isset($_POST['accueil'])){
     header("location: index.php");
 }
-if(isset($_POST['compte'])){
-    header("location: compte.php");
-}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -13,15 +10,13 @@ if(isset($_POST['compte'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Chaustore modifications prisent en compte</title>
+    <title>Chaustore prisent en compte</title>
 </head>
 <body>
-    <h2>Vos modifications ont bien étè prisent en compte.</h2>
+    <h2>Votre demande à bien étè prisent en compte.</h2>
+    <p>Vous allez recevoir un mail pour vaus aider a récupérer votre mot de passe.</p>
     <form method="post">
         <input type="submit" name="accueil" value="Acceuil">
-        <?php if(isset($_SESSION['id'])){ ?>
-        <input type="submit" name="compte" value="Mon compte">
-        <?php } ?>
     </form>
 </body>
 </html>

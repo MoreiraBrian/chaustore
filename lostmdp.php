@@ -10,7 +10,10 @@ if(isset($_POST['valider'])){
             $verfireq = "SELECT id from user WHERE email = '$email'";
         $verifsend = mysqli_query($link,$verfireq);
         $verif = mysqli_fetch_row($verifsend);
-            email($email,"Récuperation de mot de passe","Bonjour vous avez demander à changer de mot de passe suite à un oubli de ce dernier. Pour modifier votre mot de passe veuillez cliquer sur le lien suivant: www.127.0.0.1/chaustore/recupération.php,id=$verif[0]  Si vous n'étes pas l'auteur de cette demande veuillez ignorer ce mail. L'équipe de Chaustore vous souhaite une bonne journée.","from:chaustore");
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+        $headers[] = "from:chaustore";
+            mail($email,"Récuperation de mot de passe","<p>Bonjour vous avez demander à changer de mot de passe suite à un oubli de ce dernier.</p> <p>Pour modifier votre mot de passe veuillez cliquer sur le lien suivant: <a href='127.0.0.1/chaustore/recuperation.php?id=$verif[0]'>Récuperer un mot de passe</a></p>  <p>Si vous n'étes pas l'auteur de cette demande veuillez ignorer ce mail.</p> <p>L'équipe de Chaustore vous souhaite une bonne journée.</p>",implode("\r\n", $headers));
             header("location: confirmail.php");
         }else{
             $error ="Il n'y as aucun compte associé a cette adresse email.";

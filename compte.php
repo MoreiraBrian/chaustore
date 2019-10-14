@@ -11,6 +11,7 @@ require_once 'modifcompte.php';
     <title>Document</title>
 </head>
 <body>
+    <?php if(isset($_SESSION['id'])){ ?>
     <a href="index.php" title="Retour à l'accueil">Retour à l'accueil</a>
     <form class="formulaire" method="post">
         <h2>Mes informations:</h2>
@@ -25,5 +26,8 @@ require_once 'modifcompte.php';
             <input type="submit" name="mdp" value="Modifier mon mot de passe">
             <input type="submit" name="modif" value="Modifier">
     </form>
+    <?php }else{
+        header("location: index.php");
+    } ?>
 </body>
 </html>
