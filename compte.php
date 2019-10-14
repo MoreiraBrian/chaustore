@@ -1,31 +1,6 @@
 <?php session_start();
 require_once 'admin/connect.php';
-$id = $_SESSION['id'];
-$recupinforeq = "SELECT * FROM user where id = '$id'";
-$recupinfosend = mysqli_query($link,$recupinforeq);
-$info = mysqli_fetch_array($recupinfosend);
-if(isset($_POST['modif'])){
-    if($_POST['nom'] != $info['last_name']){
-        $newname = htmlspecialchars($_POST['nom']);
-        $namereq = "UPDATE user SET last_name = '$newname' WHERE id = '$id'";
-        mysqli_query($link,$namereq);
-    };
-    if($_POST['prenom'] != $info['first_name']){
-        $newname = htmlspecialchars($_POST['prenom']);
-        $namereq = "UPDATE user SET first_name = '$newname' WHERE id = '$id'";
-        mysqli_query($link,$namereq);
-    };
-    if($_POST['adresse'] != $info['address']){
-        $newname = htmlspecialchars($_POST['adresse']);
-        $namereq = "UPDATE user SET address = '$newname' WHERE id = '$id'";
-        mysqli_query($link,$namereq);
-    };
-    if($_POST['email'] != $info['email']){
-        $newname = htmlspecialchars($_POST['email']);
-        $namereq = "UPDATE user SET email = '$newname' WHERE id = '$id'";
-        mysqli_query($link,$namereq);
-    };
-}
+require_once 'modifcompte.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -36,6 +11,7 @@ if(isset($_POST['modif'])){
     <title>Document</title>
 </head>
 <body>
+    <a href="index.php" title="Retour à l'accueil">Retour à l'accueil</a>
     <form class="formulaire" method="post">
         <h2>Mes informations:</h2>
             <label for="nom">Nom: </label>

@@ -12,7 +12,12 @@ if(!empty($_POST['email']) AND !empty($_POST['mdp']) AND filter_var($_POST['emai
         $conect = mysqli_fetch_array($conectsend);
         $_SESSION['id'] = $conect[0];
         $_SESSION['name'] = $conect[1];
+        $_SESSION['email'] = $conect['email'];
         header("location: index.php");
+    }else{
+        $error = "Votre mot de passe et votre email ne correspondent pas.";
     }
+}else{
+    $error = "Vous devez remplir tous les champs.";
 }
 }

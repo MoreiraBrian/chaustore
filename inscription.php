@@ -13,6 +13,7 @@ require_once "signup.php";
     <title>Inscription</title>
 </head>
 <body>
+<a href="index.php" title="Retour à l'accueil">Retour à l'accueil</a>
     <main id="inscrit">
         <?php if(!isset($_POST['inscription'])){ ?>
         <form class="formulaire" method="post">

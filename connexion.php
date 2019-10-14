@@ -12,6 +12,7 @@ require_once 'signin.php';
     <title>Document</title>
 </head>
 <body>
+<a href="index.php" title="Retour à l'accueil">Retour à l'accueil</a>
     <form class="formulaire" method="post">
         <h2>Connexion:</h2>
         <label for='email'>Email:</label>
@@ -19,7 +20,8 @@ require_once 'signin.php';
         <label for="mdp">Mot de passe:</label>
         <input type="password" name="mdp" placeholder="Mot de passe">
         <input type="submit" name="connect" value="Me connecter">
-        <a href="" title="Mot de passe oublié.">Mot de passe oublié.</a>
+        <a href="lostmdp.php" title="Mot de passe oublié.">Mot de passe oublié.</a>
+        <?php if(isset($error)){echo $error;} ?>
     </form>
 </body>
 </html>
